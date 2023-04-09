@@ -77,4 +77,4 @@ df_expenses['email'] = email_list
 df_expenses = df_expenses[['ano','mes', 'id', 'nome', 'siglaPartido', 'siglaUf', 'urlFoto', 'email', 'tipoDespesa', 'dataDocumento', 'valorDocumento', 'urlDocumento', 'nomeFornecedor', 'cnpjCpfFornecedor']].copy()
 
 ## Save the dataframe in a csv file
-df_expenses.to_csv('expenses.csv', index=False)
+df_expenses.to_csv('expenses.csv', index=False, encoding='utf-8-sig')
