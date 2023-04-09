@@ -11,8 +11,7 @@ def get_last_page(url):
         last_page_number = re.findall('[0-9]+', last_page) 
         last_page_number = last_page_number[3]   
     except:
-        last_page_number = 1
-        print('No last page')
+        last_page_number = 1        
     return last_page_number
 
 ## API URL to get deputies ID
@@ -31,14 +30,14 @@ email_list = []
 
 for year in range(2022, 2023+1):
     page = 1
+    print(year)
 
     ## counter to select index of rows
     count = 0
 
     ## request the data for each id
     for id in df_dep_info['id']:          
-        url = 'https://dadosabertos.camara.leg.br/api/v2/deputados/'+ str(id) + '/despesas?ano=' + str(year) + '&pagina=' + str(page) + '&itens=100&ordem=ASC&ordenarPor=ano'   
-        print(id)
+        url = 'https://dadosabertos.camara.leg.br/api/v2/deputados/'+ str(id) + '/despesas?ano=' + str(year) + '&pagina=' + str(page) + '&itens=100&ordem=ASC&ordenarPor=ano'          
         last_page = get_last_page(url) 
         count += 1  
         
